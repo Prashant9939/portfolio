@@ -369,7 +369,7 @@
   emailjs.init("gBoy2eMIkmcnWyQya"); // Replace with your actual Public Key
 
   function sendemail(event) {
-    event.preventDefault(); // Prevent form from reloading
+    event.preventDefault(); // Prevents form from reloading
 
     let params = {
       name: document.getElementById("name").value,
@@ -383,12 +383,7 @@
         function (response) {
           console.log("SUCCESS!", response.status, response.text);
           alert("Your email has been sent successfully!");
-          
-          // Clear form after successful submission
-          document.getElementById("contact-form").reset();
-
-          // Remove URL parameters if present
-          window.history.replaceState(null, null, window.location.pathname);
+          document.getElementById("contact-form").reset(); // Clears the form after submission
         },
         function (error) {
           console.log("FAILED...", error);
@@ -397,9 +392,10 @@
       );
   }
 
-  // Attach event listener to form submission
+  // Attach event listener to the form
   document.getElementById("contact-form").addEventListener("submit", sendemail);
 </script>
+
 
 
 
