@@ -370,7 +370,6 @@
 
 
 <script>
-  <script>
  function sendemail(){
   let prams={
     name: document.getElementById("name").value,
@@ -383,21 +382,10 @@
           "template_zjdwbhw", // Replace with your EmailJS Template ID
           prams
         )
-        
-
-        
-        .then(
-          function (response) {
-            alert("Message sent successfully!"); // Success message
-            document.getElementById("contact-form").reset(); // Clear the form
-          },
-          function (error) {
-            alert("Failed to send message. Please try again."); // Error message
-          }
-        );
-    });
+        .then(alert("Your email has been send!!"))
+    
+        }
 </script>
-
 
 
 
