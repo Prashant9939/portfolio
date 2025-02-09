@@ -346,37 +346,30 @@
   <div class="contact__container">
     <h2 class="section-title">Contact Me</h2>
     <p class="section-subtitle">Feel free to reach out to me!</p>
-    <form id="contact-form" class="contact-form"  method="POST" action="#" >
+    <form id="contact-form" class="contact-form" method="POST" action="#"> <!-- ✅ Correct Placement -->
       <div class="form-group">
         <input type="text" id="name" name="name" placeholder="Your Name" required />
       </div>
       <div class="form-group">
-        <input type="email" id="email" name="email"  placeholder="Your Email" required />
+        <input type="email" id="email" name="email" placeholder="Your Email" required />
       </div>
       <div class="form-group">
         <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
       </div>
-      <button type="submit" class="submit-btn" onclick="sendemail()">Send Message</button>
+      <button type="submit" class="submit-btn">Send Message</button> <!-- ✅ Removed onclick -->
     </form>
   </div>
 </section>
 
-
-
-
-
-
 <!-- Add EmailJS SDK -->
-
-
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script>
   // Initialize EmailJS with your Public Key
-  emailjs.init("PnrRk_jtDMTMFMHNG"); // Replace with your actual Public Key
+  emailjs.init("your_public_key_here"); // Replace with your actual Public Key
 
   function sendemail(event) {
-    event.preventDefault(); // Prevents form from reloading
+    event.preventDefault(); // Prevent form from reloading
 
     let params = {
       name: document.getElementById("name").value,
@@ -390,7 +383,12 @@
         function (response) {
           console.log("SUCCESS!", response.status, response.text);
           alert("Your email has been sent successfully!");
-          document.getElementById("contact-form").reset(); // Clears the form after submission
+          
+          // Clear form after successful submission
+          document.getElementById("contact-form").reset();
+
+          // Remove URL parameters if present
+          window.history.replaceState(null, null, window.location.pathname);
         },
         function (error) {
           console.log("FAILED...", error);
@@ -398,6 +396,10 @@
         }
       );
   }
+
+  // Attach event listener to form submission
+  document.getElementById("contact-form").addEventListener("submit", sendemail);
+</script>
 
 
 
