@@ -14,6 +14,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
 }
 
 a {
@@ -22,6 +23,7 @@ a {
 
 body {
   font-family: "Poppins", sans-serif;
+  /* user-select: none; */
 }
 
 nav {
@@ -171,11 +173,12 @@ ul li a:hover {
 .image {
   display: grid;
   place-items: center;
+  filter: drop-shadow(0 10px 15px #9333ea);
 }
 
 .image img {
   width: min(25rem, 90%);
-  border-radius: 100%;
+  border-radius: 50%;
 }
 
 @media (width < 750px) {

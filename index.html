@@ -5,27 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="profile1.png">
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link
-  href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
-  rel="stylesheet"
-/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="style.css">
 
+
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "PnrRk_jtDMTMFMHNG",
-      });
-   })();
-</script>
+    </script>
+    <script type="text/javascript">
+      (function(){
+          emailjs.init({
+            publicKey: "PnrRk_jtDMTMFMHNG",
+          });
+      })();
+    </script>
+
     <title>Prashant</title>
   </head>
   <body>
@@ -51,13 +47,15 @@
         <div class="content">
           <p class="subtitle">HELLO</p>
           <h1 class="title">
-            I'm <span>Prashant Kumar Mishra<br />a</span> Web Developer
+            I'm <span>Prashant Kumar Mishra<br />a</span> a Software Engineer
           </h1>
           <p class="description">
-            Welcome to my web developer portfolio! I'm Prashant Kumar Mishra, a skilled and
-            creative web developer with a passion for creating beautiful,
-            responsive, and user-friendly websites. I've worked on a variety of
-            web projects, ranging from personal blogs to e-commerce platforms.
+            Hi, I'm an aspiring web developer with a passion for creating beautiful, 
+            responsive, and user-friendly websites. I'm currently a student at Greater Noida Institute of Technology, 
+            Greater Noida, where I'm honing my skills in front-end and back-end web development.
+            I have experience working on personal projects, college assignments, and freelance work, 
+            including portfolio websites, blogs, and small business sites. 
+            I'm always eager to learn new technologies and improve my coding skills to build seamless web experiences.
           </p>
           <div class="action__btns">
             <button class="hire__me">Hire Me</button>
@@ -87,13 +85,14 @@
       <h2 class="section-title">About Me</h2>
       <div class="glowing-text">
         <p>
-          Full-stack developer with <strong>5+ years</strong> of experience crafting digital experiences.
-          Specialized in modern web technologies and UX-focused design. Passionate about
-          creating immersive web applications with clean, efficient code.
+          Hi, I'm Prashant Kumar Mishra, a full-stack developer with a strong foundation in modern web technologies.
+           As a student at Greater Noida Institute of Technology, Greater Noida, I specialize in building responsive, 
+           user-friendly, and efficient web applications.
         </p>
         <p>
-          When I'm not coding, you'll find me contributing to open-source projects,
-          exploring new frameworks, or mentoring aspiring developers.
+          I am passionate about crafting seamless digital experiences with clean and optimized code, 
+          focusing on both front-end design and back-end development. Always eager to learn and explore new technologies, 
+          I strive to create immersive and innovative web applications.
         </p>
       </div>
 
@@ -279,7 +278,7 @@
 <section class="projects" id="project">
   <div class="projects__container">
     <h2 class="section-title">My Projects</h2>
-    <p class="section-subtitle">Here are some of my top projects:</p>
+  
     <div class="projects__grid">
       <!-- Project 1: Driver Drowsiness Detection -->
       <div class="project-card">
@@ -346,7 +345,7 @@
   <div class="contact__container">
     <h2 class="section-title">Contact Me</h2>
     <p class="section-subtitle">Feel free to reach out to me!</p>
-    <form id="contact-form" class="contact-form" method="POST" > <!-- ✅ Correct Placement -->
+    <form id="contact-form" class="contact-form">
       <div class="form-group">
         <input type="text" id="name" name="name" placeholder="Your Name" required />
       </div>
@@ -356,17 +355,97 @@
       <div class="form-group">
         <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
       </div>
-      <button type="submit" class="submit-btn">Send Message</button> <!-- ✅ Removed onclick -->
+      <button type="submit" class="submit-btn" onclick="sendemail()">Send Message</button>
     </form>
   </div>
 </section>
+
+
+
+
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer__container">
+    <!-- Social Media Links -->
+    <div class="social-links">
+      <a href="https://github.com/Prashant9939" target="_blank" class="social-link">
+        <i class="ri-github-fill"></i>
+      </a>
+      <a href="https://linkedin.com/in/prashant-kumar-mishra-76533918a" target="_blank" class="social-link">
+        <i class="ri-linkedin-fill"></i>
+      </a>
+      <a href="https://twitter.com/PrashanntMishra" target="_blank" class="social-link">
+        <i class="ri-twitter-fill"></i>
+      </a>
+      <a href="https://instagram.com/shiwam_01" target="_blank" class="social-link">
+        <i class="ri-instagram-line"></i>
+      </a>
+    </div>
+
+    <!-- Copyright Notice -->
+    <div class="copyright">
+      <p>&copy; 2025 Prashant Kumar Mishra. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<!-- this js for the skills container  -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const skillProgressBars = document.querySelectorAll(".skill-progress");
+
+  const animateProgressBars = () => {
+    skillProgressBars.forEach((bar) => {
+      const progress = bar.getAttribute("data-progress");
+      bar.style.width = `${progress}%`;
+    });
+  };
+
+  // Trigger animation when the skills section is in view
+  const skillsSection = document.getElementById("skill");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateProgressBars();
+          observer.unobserve(skillsSection); // Stop observing after animation
+        }
+      });
+    },
+    { threshold: 0.5 } // Trigger when 50% of the section is visible
+  );
+
+  observer.observe(skillsSection);
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Add EmailJS SDK -->
+
 
 <!-- Add EmailJS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script>
   // Initialize EmailJS with your Public Key
-  emailjs.init("gBoy2eMIkmcnWyQya"); // Replace with your actual Public Key
+  emailjs.init("PnrRk_jtDMTMFMHNG"); // Replace with your actual Public Key
 
   function sendemail(event) {
     event.preventDefault(); // Prevents form from reloading
@@ -395,7 +474,6 @@
   // Attach event listener to the form
   document.getElementById("contact-form").addEventListener("submit", sendemail);
 </script>
-
 
 
 
