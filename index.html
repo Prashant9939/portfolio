@@ -441,8 +441,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 <!-- Add EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
   // Initialize EmailJS with your Public Key
   emailjs.init("PnrRk_jtDMTMFMHNG"); // Replace with your actual Public Key
@@ -471,8 +472,10 @@ document.addEventListener("DOMContentLoaded", function () {
       );
   }
 
-  // Attach event listener to the form
-  document.getElementById("contact-form").addEventListener("submit", sendemail);
+  // Ensure DOM is loaded before attaching event listener
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("contact-form").addEventListener("submit", sendemail);
+  });
 </script>
 
 
